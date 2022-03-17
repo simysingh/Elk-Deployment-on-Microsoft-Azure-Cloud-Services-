@@ -113,11 +113,19 @@ _TODO: Answer the following questions to fill in the blanks:_
 http://[public IP address of ELK Server]:5601/app/kibana
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 ssh azureuser[or chosen name]@jump-box-ip-address
+
 sudo docker pull [name of container] to download container
+
 sudo docker run -ti [name of container] bash
+
 sudo docker start [name of container] to start the container
+
 sudo docker attach [to connect to the Ansible container]
+
 Navigate to the /etc/ansible directory
+
 nano hosts to configure the IP addresses within the "webserver" and "elk" groups
+
 nano ansible.cfg to specify the remote user.
+
 ansible-playbook [name of playbook]
