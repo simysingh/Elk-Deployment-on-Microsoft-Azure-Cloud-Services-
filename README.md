@@ -31,14 +31,14 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name                 | Function          | IP Address | Operating System            |
-|---------- ---------- |------------       |------------------                        |
-| Jump Box             | Gateway           | 10.0.0.4    | Linux Ubuntu 18.04-LTS     |
-| Local Workstateion   | External Network  | 108.2.171.3 | Windows                    |
-| WEB 1                | Web Content       | 10.0.0.5    | Linux Ubuntu 18.04-LTS     |
-| WEB 2                | Web Content       | 10.0.0.6    | Linux Ubuntu 18.04-LTS     |.
-| Elk-Server           | Process Logs      | 10.2.0.4    | Linux Ubuntu 18.04-LTS     |
-| Load Balancer        | Distribute Traffic|             | none                       |
+ | Name                 | Function          | IP Address | Operating System            |
+ |---------- ---------- |------------       |------------------                        |
+ | Jump Box             | Gateway           | 10.0.0.4    | Linux Ubuntu 18.04-LTS     |
+ | Local Workstateion   | External Network  | 108.2.171.3 | Windows                    |
+ | WEB 1                | Web Content       | 10.0.0.5    | Linux Ubuntu 18.04-LTS     |
+ | WEB 2                | Web Content       | 10.0.0.6    | Linux Ubuntu 18.04-LTS     |
+ | Elk-Server           | Process Logs      | 10.2.0.4    | Linux Ubuntu 18.04-LTS     |
+ | Load Balancer        | Distribute Traffic|             | none                       |
 
 ### Access Policies
 
@@ -50,13 +50,13 @@ Machines within the network can only be accessed by JumpBox Provisioner 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses         |
-|----------|---------------------|----------------------        |
-| Jump Box | Yes                 | Local Workstation ssh port 22|
-| Web 1    | No                  | 10.0.0.5 SSH 22              |
-| Web 2    | No                  | 10.0.0.6 SSH 22              |
-| Elk VM   | Only on Port 5601   | 10.0.0.5 10.0.0.6 Workstation|
-| LoadBalancer| Yes              | Workstation HTTP port 80|
+| Name        | Publicly Accessible | Allowed IP Addresses         |
+|-------------|---------------------|------------------------------|
+| Jump Box    | Yes                 | Local Workstation ssh port 22|
+| Web 1       | No                  | 10.0.0.5 SSH 22              |
+| Web 2       | No                  | 10.0.0.6 SSH 22              |
+| Elk VM      | Only on Port 5601   | 10.0.0.5 10.0.0.6 Workstation|
+| LoadBalancer| Yes                 | Workstation HTTP port 80     |
 
 ### Elk Configuration
 
