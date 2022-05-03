@@ -78,26 +78,23 @@ sudo docker pull cyberxsecurity/ansible:latest (download container)
 sudo docker container list -a (list all installed docker containers)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-See Images.
 
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png) See Images
+images/elk-docker-ps.png
 
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+Machines Being Monitored:
 10.0.0.5
 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
 File Beat
 Metric Beat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
+Filebeat consolidates the webservers' log information into a digest of important activities that’s easy to search through. This includes login attempts, sudo command usage, etc. Metricbeat monitors the health of the web servers by providing a readout of system usage (CPU, RAM, etc.)
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -108,13 +105,12 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to  http://[public IP address of ELK Server]:5601/app/kibana to check that the installation worked as expected. o confirm that the ELK server is receiving logs from Web-1 and Web-2 you will navigate from within the Kibana GUI to Add Log Data --> System Logs --> DEB tab --> Step 5: Module Status --> Check Data.
 
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_ filebeat-playbook.yml. It will be copied in the /etc/ansible/roles/filebeat-playbook.yml directory.
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ In Hosts file Add 
+The playbook file is "filebeat-playbook.yml" and it will be copied in the /etc/ansible/roles/filebeat-playbook.yml directory.
+to update the hostfile In Hosts file Add 
 [elk] under [webservers]
-- _Which URL do you navigate to in order to check that the ELK server is running?
+URL to check if the ELK server is running:
 http://[public IP address of ELK Server]:5601/app/kibana
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
 ssh azureuser[or chosen name]@jump-box-ip-address
 
 sudo docker pull [name of container] to download container
