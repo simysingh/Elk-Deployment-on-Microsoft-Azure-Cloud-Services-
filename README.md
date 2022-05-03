@@ -31,14 +31,16 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
- | Name                 | Function          | IP Address | Operating System            |
- |---------- ---------- |------------       |------------------                        |
- | Jump Box             | Gateway           | 10.0.0.4    | Linux Ubuntu 18.04-LTS     |
- | Local Workstateion   | External Network  | 108.2.171.3 | Windows                    |
- | WEB 1                | Web Content       | 10.0.0.5    | Linux Ubuntu 18.04-LTS     |
- | WEB 2                | Web Content       | 10.0.0.6    | Linux Ubuntu 18.04-LTS     |
- | Elk-Server           | Process Logs      | 10.2.0.4    | Linux Ubuntu 18.04-LTS     |
- | Load Balancer        | Distribute Traffic|             | none                       |
+
+| Name              	| Function           	| IP Address  	| Operating System       	|
+|-------------------	|--------------------	|-------------	|------------------------	|
+| --------          	| -------            	| ---------   	| ----------------       	|
+| Jump Box          	| Gateway            	| 10.0.0.4    	| Linux Ubuntu 18.04-LTS 	|
+| Local Workstation 	| External Network   	| 108.2.171.3 	| Windows                	|
+| Web 1             	| Web Content        	| 10.0.0.5    	| Linux Ubuntu 18.04-LTS 	|
+| Web 2             	| Web Content        	| 10.0.0.6    	| Linux Ubuntu 18.04-LTS 	|
+| Elk-Server        	| Process Logs       	| 10.2.0.4    	| Linux Ubuntu 18.04-LTS 	|
+| Load Balancer     	| Distribute Traffic 	|             	| None                   	|
 
 ### Access Policies
 
@@ -64,7 +66,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The main advantage of automating configuration with Ansible is that it saves time, and as sysadmins no longer have to spend a lot of time configuring machines manually. Ansbile allows repition and less bugs as the multiple human error aspect is no longer in affect.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+Install Docker to set up a container to house the ELK stack
+Increase virtual memory to accomodate the resource intensive ELK stack
+Download the image (sebp/elk:761) and start the container
+Enable docker container to start on VM boot
+
 sudo apt update (ensure system is updated)
 sudo apt install -y docker.io (bring in docker)
 sudo systemctl status docker (verify docker is running)
