@@ -2,11 +2,12 @@
 
 The files in this repository were used to configure the network depicted below.
 
-diagram:  https://drive.google.com/file/d/1OOP6VmnED7D-wJWomLNphkSSxQ0kBzav/view?usp=sharing
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+![CloudDiagram drawio](https://user-images.githubusercontent.com/77586504/166480640-f6ac5dc8-98c6-40db-84dd-86a2f5eec887.png)
 
-  - _TODO: Enter the playbook file._
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above.
+
+
 
 This document contains the following details:
 - Description of the Topologu
@@ -25,11 +26,10 @@ Load balancing ensures that the application will be highly available, in additio
 - The primary function of a load balancer is to spread workloads across multiple servers to prevent overloading servers, optimize productivity, and maximize uptime. Load balancers also add resiliency by rerouting live traffic from one server to another if a server falls prey to DDoS attacks or otherwise becomes unavailable. In this way, load balancers help to eliminate single points of failure, reduce the attack surface, and make it harder to exhaust resources and saturate links.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-- _TODO: What does Filebeat watch for? Looks for log events and gather data about the file system
-- _TODO: What does Metricbeat record? Monitor and Colleect metrics from the system and services running on each server.
+-Filebeat watches for log events and gather data about the file system.
+-Metricbeat Monitors and Collect metrics from the system and services running on each server.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name                 | Function          | IP Address | Operating System            |
 |---------- ---------- |------------       |------------------                        |
@@ -45,10 +45,8 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump-box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_ MY PUBLIC IP ADDRESS MY PUBLIC IP ADDRESS
+Machines within the network can only be accessed by JumpBox Provisioner 10.0.0.4
 
-Machines within the network can only be accessed by _____. JumpBox Provisioner 10.0.0.4
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
@@ -62,9 +60,8 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_ Saves time, as sysadmins no longer have to spend a lot of time configuring machines manually. Ansbile allows 
-repition and less bugs as the multiple human error aspect is no longer in affect.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because Ansible is faster and less error prone.
+The main advantage of automating configuration with Ansible is that it saves time, and as sysadmins no longer have to spend a lot of time configuring machines manually. Ansbile allows repition and less bugs as the multiple human error aspect is no longer in affect.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
