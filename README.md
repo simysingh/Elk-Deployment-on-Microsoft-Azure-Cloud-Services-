@@ -106,7 +106,7 @@ SSH into the control node and follow the steps below:
 
 
 The playbook file is "filebeat-playbook.yml" and it will be copied in the /etc/ansible/roles/filebeat-playbook.yml directory.
-to update the hostfile In Hosts file Add 
+To update the Host File Add:  
 [elk] under [webservers]
 URL to check if the ELK server is running:
 http://[public IP address of ELK Server]:5601/app/kibana
